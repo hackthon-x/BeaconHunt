@@ -1,0 +1,14 @@
+# BeaconHunt — Python dependencies (redesigned dark SOC dashboard)
+# Tested with Python 3.11+ (developed on 3.12)
+
+PySide6>=6.6,<7           # Desktop GUI framework (Qt 6 bindings)
+numpy>=1.26               # Numerical helpers for the activity/timing charts
+matplotlib>=3.8           # Activity chart, timing lollipop, jitter waveform (QtAgg backend)
+
+# Notes
+# - matplotlib uses the QtAgg backend automatically under PySide6; no system Qt
+#   install is required because PySide6 ships its own Qt runtime.
+# - This redesigned package ships static mock data (matching the reference
+#   BEACONHUNT dashboard screenshot) so the UI is runnable standalone.
+#   The full BeaconHunt analysis backend (Scapy PCAP parsing, scoring, exports)
+#   is unchanged and remains a drop-in replacement for the mock data module.
